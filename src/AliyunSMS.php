@@ -41,9 +41,9 @@ class AliyunSMS implements SmsTemplateInterface
 
     public function templateSMS($phone, $templateId = null, $params = array(), &$error = null)
     {
-        $demo = new static();
+        $this->init();
 
-        $response = $demo->sendSms(
+        $response = $this->sendSms(
             $this->signName, // 短信签名
             $this->templateId, // 短信模板编号
             "$phone", // 短信接收者
@@ -52,14 +52,23 @@ class AliyunSMS implements SmsTemplateInterface
         //print_r($response);
         // [Message] => OK [RequestId] => 7244DDE2-CCB9-4269-9355-98D9EE827CC2 [BizId] => 109009657501^1112068542881 [Code] => OK
 
+        $error = $response->Message;
+
         return $response->Message == 'OK';
     }
+
+    private $init = false;
 
     /**
      * 构造器
      */
-    public function __construct()
+    public function init()
     {
+        if ($this->init) {
+            return;
+        }
+        $this->init = true;
+
         // 加载区域结点配置
         Config::load();
 
