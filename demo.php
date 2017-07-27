@@ -13,5 +13,4 @@ $sms->templateId = '你的模板id';
 $sms->templateCodeKey = '模板中验证码对应占位符';
 
 $bool = $sms->sendCode('18688888888', '1234');
-
 var_dump($bool);

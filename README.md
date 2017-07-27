@@ -22,10 +22,16 @@ $sms = new \PFinal\Aliyun\AliyunSMS();
 $sms->accessKeyId = '你的accessKeyId';
 $sms->accessKeySecret = '你的accessKeySecret';
 $sms->signName = '你的签名';
-$sms->templateId = '你的模板id';
+
+$sms->templateId = '验证码模板id';
 $sms->templateCodeKey = '模板中验证码对应占位符';
 
+//发验证码
 $bool = $sms->sendCode('18688888888', '1234');
-
 var_dump($bool);
+
+//发普通模板短信
+$bool = $sms->templateSMS('18688888888','你的模板id',['var1'=>'value1','var2'=>'value2']);
+var_dump($bool);
+
 ```
