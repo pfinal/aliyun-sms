@@ -1,14 +1,14 @@
 {
-    "name": "阿里云短信SDK",
+    "name": "pfinal/aliyun-sms",
     "description": "Aliyun SMS SDK for PHP",
     "keywords": [ "aliyun", "SMS", "sdk" ],
     "type": "library",
     "license": "Apache-2.0",
-    "homepage": "https://www.pfinal.cn",
+    "homepage": "http://www.pfinal.cn",
     "authors": [
         {
-            "name": "Aliyuncs",
-            "homepage": "https://www.aliyun.com"
+            "name": "Ethan",
+            "homepage": "http://www.pfinal.cn"
         }
     ],
     "require": {
